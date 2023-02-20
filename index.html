@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Meals</title>
+</head>
+<body>
+<p>Were you ever unable to decide what to have for dinner? 
+
+Struggle no more. Simply build up the entrees in the JavaScript code, 
+
+and whenever you can't decide, just click the button!</p>
+
+
+
+<button onclick="randomMeal()">Luck Of The Draw Meal</button> 
+
+<p class="randomMeal"></p>
+
+<script>
+const entree1 = {
+    starter : "Bacon Cheese Fries",
+    main: "Beef Burger and Coleslaw",
+    dessert: "Deep Fried Ice-Cream"
+};
+    
+const entree2 = {
+    starter : "Smoked Salmon On Rye",
+    main: "Vegetarian Couscous Rolls",
+    dessert: "Fruit Plate"
+};
+
+const entree3 = {
+    starter : "Chips and Hummus",
+    main: "Grilled Chicken in Hot Sauce",
+    dessert: "Chocolate Ganache Cake"
+};
+
+const entree4 = {
+    starter : "Chips and Salsa",
+    main : "Chicken Tacos",
+    dessert : "Churros"
+}
+
+const entree5 = {
+    starter : "Seasonal Salad",
+    main : "Roasted Chicken",
+    dessert : "New York Cheesecake"
+}
+
+const entree6 = {
+    starter : "Shrimp Cocktail",
+    main : "Baked Rigatoni",
+    dessert : "Bread Pudding"
+}
+
+const meals = [entree1, entree2, entree3, entree4, entree5, entree6];
+
+const randomMeal = function() {
+    // Get a random number between 0 and the last valid index of the meal array
+    let mealNumber = (Math.floor(Math.random() * 5)); 
+    showMeal(mealNumber);
+}
+
+const showMeal = (mealNumber)=> {
+    let str = `Start with ${meals[mealNumber].starter}, 
+    followed by ${meals[mealNumber].main}, 
+    and finish off your meal with ${meals[mealNumber].dessert}`;
+    
+    let area = document.querySelector(".randomMeal");
+    area.innerHTML = str;
+}
+</script>
+</body>
+</html>
